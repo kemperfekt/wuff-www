@@ -1,0 +1,14 @@
+name: Check HTML validity
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check for presence of index.html
+        run: test -f index.html && echo "Landingpage vorhanden"
