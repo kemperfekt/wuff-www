@@ -6,6 +6,7 @@
     <title>Wuffchat</title>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="wuffchat-styles.css">
     <style>
       body {
         font-family: 'Figtree', sans-serif;
@@ -24,44 +25,48 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK672XJ5"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="px-2 py-3 flex flex-col items-center gap-2 text-center">
-      <div class="w-full max-w-xs">
-        <a href="https://app.wuffchat.de">
-          <img src="public/image1.png" alt="Logo of Wuffchat" class="w-full max-w-[220px] h-auto" />
-        </a>
+    <div class="main-container">
+      <div class="content-wrapper">
+        <div class="logo-container">
+          <a href="https://app.wuffchat.de">
+            <img src="public/image1.png" alt="Logo of Wuffchat" class="logo-image" />
+          </a>
+        </div>
+        
+        <div class="text-container">
+          <h1 class="title">
+            <a href="https://app.wuffchat.de">Wuffchat</a>
+          </h1>
+          <p class="subtitle">
+            <a href="https://app.wuffchat.de">Sprich mit deinem Hund</a>
+          </p>
+          <p class="description">
+            Verstehe, was dein Hund braucht und verbessere eure Kommunikation
+          </p>
+        </div>
+        
+        <div class="image-container">
+          <a href="https://app.wuffchat.de">
+            <img src="public/image2.png" alt="Jetzt starten" class="action-image" />
+          </a>
+        </div>
+        
+        <h2 class="section-title">So funktioniert's:</h2>
+        
+        <div class="steps-container">
+          <a href="https://app.wuffchat.de">
+            <img src="public/image3.png" alt="Erklärungsbutton 1" class="step-image" />
+          </a>
+          <a href="https://app.wuffchat.de">
+            <img src="public/image4.png" alt="Erklärungsbutton 2" class="step-image" />
+          </a>
+        </div>
+        
+        <footer class="footer">
+          <a href="https://www.wuffchat.de/public/datenschutz.html" class="footer-link">Datenschutz</a>
+          <a href="https://www.wuffchat.de/public/impressum.html" class="footer-link">Impressum</a>
+        </footer>
       </div>
-
-      <div class="w-full max-w-xs">
-        <h1 class="text-2xl font-semibold underline">
-          <a href="https://app.wuffchat.de">Wuffchat</a>
-        </h1>
-        <p class="text-base leading-snug">
-          <a href="https://app.wuffchat.de">Sprich mit deinem Hund</a>
-        </p>
-        <p class="text-base leading-snug px-2 text-wrap break-words">
-          Verstehe, was dein Hund braucht und verbessere eure Kommunikation
-        </p>
-      </div>
-
-      <a href="https://app.wuffchat.de">
-        <img src="public/image2.png" alt="Jetzt starten" class="w-full max-w-[220px] rounded hover:scale-105 transition-transform duration-200" />
-      </a>
-
-      <h2 class="text-lg font-semibold mt-2">So funktioniert’s:</h2>
-
-      <div class="flex flex-col items-center gap-[5px]">
-        <a href="https://app.wuffchat.de">
-          <img src="public/image3.png" alt="Erklärungsbutton 1" class="w-full max-w-[220px]" />
-        </a>
-        <a href="https://app.wuffchat.de">
-          <img src="public/image4.png" alt="Erklärungsbutton 2" class="w-full max-w-[220px]" />
-        </a>
-      </div>
-
-      <footer class="text-xs mt-4 space-x-4">
-        <a href="https://www.wuffchat.de/public/datenschutz.html" class="underline">Datenschutz</a>
-        <a href="https://www.wuffchat.de/public/impressum.html" class="underline">Impressum</a>
-      </footer>
     </div>
   </body>
 </html>
