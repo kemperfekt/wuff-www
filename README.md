@@ -1,29 +1,124 @@
-# Wuffchat / DogBot – Customer Journey (MVP)
+# WuffChat Landing Page
 
-Diese Customer Journey beschreibt die dialogbasierte Nutzerführung von Wuffchat (DogBot) im MVP-Status – mit Fokus auf:
+**Production**: Next.js marketing site | **Live**: wuffchat.de
 
-- Empathische Nutzerbindung
-- Relevante Datenerhebung
-- Conversion zur kostenpflichtigen Beratung
+Marketing website and landing page for WuffChat, featuring product information, pricing, and conversion flows to the main application.
+
+## Technical Architecture
+
+```mermaid
+graph TB
+    User[Visitor] --> Landing[Next.js Landing]
+    Landing --> Pages[Static Pages]
+    Landing --> CTA[Call-to-Action]
+    
+    Pages --> About[About/Features]
+    Pages --> Pricing[Pricing Plans]  
+    Pages --> Contact[Contact Form]
+    
+    CTA --> App[app.wuffchat.de<br/>Main Application]
+    Contact --> Integration[Zoho Integration]
+    
+    subgraph "External Services"
+        Zoho[Zoho CRM/Bookings]
+        Analytics[Google Analytics]
+    end
+    
+    Integration --> Zoho
+    Landing --> Analytics
+```
+
+### Key Pages
+- **Homepage**: Product overview and value proposition
+- **Features**: Technical capabilities and AI features
+- **Pricing**: Service tiers and consultation booking
+- **About**: Company background and team information
+- **Contact**: Lead generation and support inquiries
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Configure environment
+cp .env.local.template .env.local
+# Edit with your service API keys
+
+# Development server
+npm run dev
+
+# Production build
+npm run build
+npm run start
+```
+
+## Features & Integrations
+
+### Marketing Conversion Flow
+1. **Problem Awareness**: Emotional connection through dog behavior challenges
+2. **Solution Presentation**: AI-powered conversation with Balu (dog perspective)
+3. **Value Demonstration**: Free behavioral insights and analysis
+4. **Lead Capture**: Email collection for follow-up resources
+5. **Premium Conversion**: 60-minute consultation booking (€69)
+
+### Technical Integrations
+- **Zoho CRM**: Lead management and customer data
+- **Zoho Bookings**: Consultation scheduling system
+- **Stripe Checkout**: Payment processing for consultations
+- **Email Automation**: Follow-up sequences and resource delivery
+- **Google Analytics**: Traffic analysis and conversion tracking
+
+### Performance Optimizations
+- **Static Generation**: Pre-rendered pages for fast loading
+- **Image Optimization**: Next.js automatic image optimization
+- **SEO Optimization**: Meta tags, structured data, sitemap
+- **Mobile First**: Responsive design optimized for mobile users
+
+## Content Management
+
+### Localization
+- **Primary Language**: German (target market)
+- **Content Structure**: Modular components for easy updates
+- **SEO Content**: Optimized for dog behavior and training keywords
+
+### A/B Testing Ready
+- **Conversion Elements**: Headline, CTA buttons, pricing presentation
+- **Analytics Integration**: Event tracking for user interactions
+- **Performance Monitoring**: Core Web Vitals and conversion metrics
+
+## Deployment
+
+### Production Stack
+- **Platform**: Vercel/Netlify (static deployment)
+- **Domain**: wuffchat.de with SSL
+- **CDN**: Global content delivery network
+- **Monitoring**: Uptime and performance tracking
+
+### Environment Variables
+```bash
+NEXT_PUBLIC_APP_URL=https://app.wuffchat.de
+ZOHO_API_KEY=your-zoho-api-key
+GOOGLE_ANALYTICS_ID=GA-measurement-id
+STRIPE_PUBLIC_KEY=pk_live_...
+```
+
+## Development Tools
+
+```bash
+# Available scripts
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # ESLint checking
+npm run analyze      # Bundle analysis
+```
+
+### Code Quality
+- **TypeScript**: Type-safe development
+- **ESLint/Prettier**: Code formatting and linting
+- **Lighthouse**: Performance and accessibility auditing
 
 ---
 
-## Übersicht der Journey
-
-| Phase              | Nutzerinteraktion                                                                 | Ziel                                                    | Gesammelte Daten                                |
-|--------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------|
-| **1. Symptomeingabe** | *„Was ist los? Was fühlst Du, wenn Dein Hund sich so verhält?“*                   | Einstieg durch Emotionalität & Problemorientierung      | Gefühl, Problembeschreibung                      |
-| **2. Hundeperspektive** | *„Darf ich Dir sagen, wie ich mich dabei fühle, [Name Mensch]? Wie heiße ich?“* | Perspektivwechsel, Nähe, Identifikation mit dem Hund    | Name des Hundes, ggf. Name des Menschen          |
-| **3. Kontextfrage**    | *„Darf ich Dich etwas besser kennenlernen?“*                                     | Personalisierte Diagnose, Vertrauen                    | Alter, Rasse, Geschlecht, Geburtsdatum des Hundes |
-| **4. Diagnose**        | *„Bin ich kastriert? War ich schon immer bei Dir?“*                              | Erfassung erziehungsrelevanter Rahmenbedingungen        | Kastration, Herkunft (seit Welpe?)               |
-| **5. Lernaufgabe**     | *„Möchtest Du unsere Lernaufgabe per E-Mail erhalten?“*                          | Mehrwert schaffen, Opt-in ermöglichen                   | E-Mail-Adresse, Opt-In für weitere Infos         |
-| **6. CTA (Buchung)**   | *„Wenn Du Unterstützung brauchst: 60 Min Online-Beratung für 69 €.“*              | Conversion zur Beratung mit dem Menschen (Trainer)      | Buchung via Zoho Bookings + Checkout (Stripe)    |
-
----
-
-## Technische Integrationen (MVP)
-
-- **Zoho Bookings** für Terminvereinbarung
-- **Zoho Checkout** (mit Stripe) für Zahlungsabwicklung
-- **Zoho CRM / Flow** zur Speicherung von Kontaktdaten
-- **E-Mail-Versand** (z. B. mit PDF oder Zusammenfassung) nach Opt-in
+**Back to WuffChat meta-repository** - see [wuffchat](https://github.com/kemperfekt/wuffchat) for complete overview
